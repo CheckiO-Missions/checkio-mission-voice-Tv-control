@@ -1,0 +1,20 @@
+class VoiceCommand(object):
+    pass
+
+
+if __name__ == '__main__':
+    #These "asserts" using only for self-checking and not necessary for auto-testing
+
+    channels = ["BBC", "Discovery", "TV1000"]
+
+    controller = VoiceCommand(channels)
+    
+    assert controller.first() == "BBC"
+    assert controller.last() == "TV1000"
+    assert controller.turn_channel(1) == "BBC"
+    assert controller.next() == "Discovery"
+    assert controller.previous() == "BBC"
+    assert controller.current() == "BBC"
+    assert controller.is_exist(4) == "No"
+    assert controller.is_exist(3) == "Yes"
+    print("Coding complete? Let's try tests!")

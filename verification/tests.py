@@ -24,85 +24,85 @@ def prepare_test(test="", answer=None, middle_code="", show_code=None):
 
 TESTS = {
     "1. First": [
-        prepare_test(middle_code='''channels = ['BBC', 'Discovery', 'TV1000']
-controller = VoiceCommand(channels)
+        prepare_test(middle_code='''CHANNELS = ['BBC', 'Discovery', 'TV1000']
+controller = VoiceCommand(CHANNELS)
 controller.turn_channel(1)
-controller.previous()''',
-                     test="controller.current()",
+controller.previous_channel()''',
+                     test="controller.current_channel()",
                      answer="TV1000")
     ],
     "2. Second": [
-        prepare_test(middle_code='''channels = ['BBC', 'Discovery', 'TV1000']
-controller = VoiceCommand(channels)
+        prepare_test(middle_code='''CHANNELS = ['BBC', 'Discovery', 'TV1000']
+controller = VoiceCommand(CHANNELS)
 controller.turn_channel(3)
-controller.next()''',
-                     test="controller.current()",
+controller.next_channel()''',
+                     test="controller.current_channel()",
                      answer="BBC")
     ],
     "3. Third": [
-        prepare_test(middle_code='''channels = ['BBC', 'Discovery', 'NickMusic', 'MTV']
-controller = VoiceCommand(channels)
-controller.next()
-controller.next()
-controller.next()''',
-                     test="controller.current()",
+        prepare_test(middle_code='''CHANNELS = ['BBC', 'Discovery', 'NickMusic', 'MTV']
+controller = VoiceCommand(CHANNELS)
+controller.next_channel()
+controller.next_channel()
+controller.next_channel()''',
+                     test="controller.current_channel()",
                      answer="MTV")
     ],
     "4. Fourth": [
-        prepare_test(middle_code='''channels = ['ZeeTV', 'Eurosport', 'TV1000', 'ABC News']
-controller = VoiceCommand(channels)
+        prepare_test(middle_code='''CHANNELS = ['ZeeTV', 'Eurosport', 'TV1000', 'ABC News']
+controller = VoiceCommand(CHANNELS)
 controller.turn_channel(2)
 controller.turn_channel(4)
-controller.next()''',
-                     test="controller.current()",
+controller.next_channel()''',
+                     test="controller.current_channel()",
                      answer="ZeeTV")
     ],
     "5. Fifth": [
-        prepare_test(middle_code='''channels = ['ZeeTV', 'Eurosport', 'TV1000', 'ABC News']
-controller = VoiceCommand(channels)
+        prepare_test(middle_code='''CHANNELS = ['ZeeTV', 'Eurosport', 'TV1000', 'ABC News']
+controller = VoiceCommand(CHANNELS)
 controller.turn_channel(1)''',
                      test="controller.is_exist(6)",
                      answer="No")
     ],
     "6. Sixth": [
-        prepare_test(middle_code='''channels = ['BBC', 'Discovery', 'NickMusic', 'MTV']
-controller = VoiceCommand(channels)
-controller.previous()
-controller.previous()''',
-                     test="controller.current()",
+        prepare_test(middle_code='''CHANNELS = ['BBC', 'Discovery', 'NickMusic', 'MTV']
+controller = VoiceCommand(CHANNELS)
+controller.previous_channel()
+controller.previous_channel()''',
+                     test="controller.current_channel()",
                      answer="NickMusic")
     ],
     "7. Seventh": [
-        prepare_test(middle_code='''channels = ['BBC', 'Discovery', 'NickMusic', 'MTV']
-controller = VoiceCommand(channels)
-controller.first()
-controller.next()
-controller.next()''',
-                     test="controller.current()",
+        prepare_test(middle_code='''CHANNELS = ['BBC', 'Discovery', 'NickMusic', 'MTV']
+controller = VoiceCommand(CHANNELS)
+controller.first_channel()
+controller.next_channel()
+controller.next_channel()''',
+                     test="controller.current_channel()",
                      answer="NickMusic")
     ],
     "8. Eighth": [
-        prepare_test(middle_code='''channels = ['ZeeTV', 'Eurosport', 'TV1000', 'ABC News']
-controller = VoiceCommand(channels)
-controller.last()
-controller.previous()''',
-                     test="controller.current()",
+        prepare_test(middle_code='''CHANNELS = ['ZeeTV', 'Eurosport', 'TV1000', 'ABC News']
+controller = VoiceCommand(CHANNELS)
+controller.last_channel()
+controller.previous_channel()''',
+                     test="controller.current_channel()",
                      answer="TV1000")
     ],
     "9. Ninth": [
-        prepare_test(middle_code='''channels = ['Nickelodeon', 'BBC', 'Discovery', 'TV1000']
-controller = VoiceCommand(channels)
+        prepare_test(middle_code='''CHANNELS = ['Nickelodeon', 'BBC', 'Discovery', 'TV1000']
+controller = VoiceCommand(CHANNELS)
 controller.turn_channel(3)
-controller.next()''',
+controller.next_channel()''',
                      test="controller.is_exist('BBC')",
                      answer="Yes")
     ],
     "10. Tenth": [
-        prepare_test(middle_code='''channels = ['BBC', 'Nickelodeon', 'Discovery', 'TV1000']
-controller = VoiceCommand(channels)
+        prepare_test(middle_code='''CHANNELS = ['BBC', 'Nickelodeon', 'Discovery', 'TV1000']
+controller = VoiceCommand(CHANNELS)
 controller.turn_channel(3)
-controller.next()''',
-                     test="controller.current()",
+controller.next_channel()''',
+                     test="controller.current_channel()",
                      answer="BBC")
     ]
 

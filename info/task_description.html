@@ -1,12 +1,12 @@
 <p>
 Technologies are developing very fast - only 50 years ago a simple black and white TV was almost a great treasure! And now even the big cool color TV with remote control is the usual thing. Let's try to improve our TV and add to it voice control! At least we will write the simple prototype with Python. It will use the next commands:<br>
 <br>
-<strong>first()</strong> - turn on the first channel from the list.<br>
-<strong>last()</strong> - turn on the last channel from the list.<br>
+<strong>first_channel()</strong> - turn on the first channel from the list.<br>
+<strong>last_channel()</strong> - turn on the last channel from the list.<br>
 <strong>turn_channel(N)</strong> - turn on the N channel. Pay attention that the channels numbers start from 1, not from 0.<br>
-<strong>next()</strong> - turn on the next channel. If the current channel is the last - turn on the first channel.<br>
-<strong>previous()</strong> - turn on the previous channel. If the current channel is the first - turn on the last channel.<br>
-<strong>current()</strong> - return the name of the current channel.<br>
+<strong>next_channel()</strong> - turn on the next channel. If the current channel is the last - turn on the first channel.<br>
+<strong>previous_channel()</strong> - turn on the previous channel. If the current channel is the first - turn on the last channel.<br>
+<strong>current_channel()</strong> - return the name of the current channel.<br>
 <strong>is_exist(N/'name')</strong> - get 1 argument - the number N or the string 'name' and returns "Yes", if the channel N or 'name' is exist in the list or "No" in the other case.<br>
 <br>
 The default channel which is turn on before all commands is №1.
@@ -19,16 +19,16 @@ In this mission you could use the <a href='https://en.wikipedia.org/wiki/Iterato
 <p>
 <strong>Example</strong>:
 <pre class="brush: python">
-channels = ["BBC", "Discovery", "TV1000"]
+CHANNELS = ["BBC", "Discovery", "TV1000"]
 
-controller = VoiceCommand(channels)
-    
-controller.first() == "BBC"
-controller.last() == "TV1000"
+controller = VoiceCommand(CHANNELS)
+
+controller.first_channel() == "BBC"
+controller.last_channel() == "TV1000"
 controller.turn_channel(1) == "BBC"
-controller.next() == "Discovery"
-controller.previous() == "BBC"
-controller.current() == "BBC"
+controller.next_channel() == "Discovery"
+controller.previous_channel() == "BBC"
+controller.current_channel() == "BBC"
 controller.is_exist(4) == "No"
 controller.is_exist('BBC') == "Yes"
 </pre>

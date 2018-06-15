@@ -16,5 +16,5 @@ if __name__ == '__main__':
     assert controller.previous_channel() == "BBC"
     assert controller.current_channel() == "BBC"
     assert controller.is_exist(4) == "No"
-    assert controller.is_exist("TV1000") == "Yes"
+    assert controller.is_exist('TV1000') == "Yes"
     print("Coding complete? Let's try tests!")

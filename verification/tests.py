@@ -103,7 +103,7 @@ controller = VoiceCommand(CHANNELS)
 controller.turn_channel(3)
 controller.next_channel()''',
                      test="controller.current_channel()",
-                     answer="BBC")
+                     answer="TV1000")
     ]
 
 }

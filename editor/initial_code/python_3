@@ -1,4 +1,4 @@
-class VoiceCommand(object):
+class VoiceCommand:
     pass
 
 
